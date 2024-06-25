@@ -1,11 +1,9 @@
-:root {
+.nav {
     --color-background: white;
     --color-on-background: black;
-    --color-primary: #0066ff;
+    --color-primary: #6340fd;
     --color-on-primary: white;
-}
 
-.nav {
     display: flex;
     column-gap: 2rem;
 }

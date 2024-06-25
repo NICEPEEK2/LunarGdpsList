@@ -1,0 +1,55 @@
+{
+    "id": 7090059,
+    "name": "WEcropolis",
+    "author": "8989",
+    "creators": ["8989"],
+    "verifier": "8989",
+    "verification": "https://www.youtube.com/watch?v=CS_LNBXYoHc",
+    "showcase": "https://youtu.be/p_q1Us5Ldt0",
+    "percentToQualify": 55,
+    "password": "Нету пароля",
+    "records": [
+        {
+            "user": "miffiewxx",
+            "link": "https://www.youtube.com/watch?v=6xwL9yYsbKA",
+            "percent": 100,
+            "hz": 360
+        },
+        {
+            "user": "Tami",
+            "link": "https://youtu.be/TVi6QrMM3cw",
+            "percent": 100,
+            "hz": 360
+        },
+        {
+            "user": "SpaceKZ",
+            "link": "https://www.youtube.com/watch?v=CS_LNBXYoHc",
+            "percent": 100,
+            "hz": 360
+        },
+        {
+            "user": "kw3qlly",
+            "link": "https://youtu.be/EnRP2_n4iK0",
+            "percent": 100,
+            "hz": 360
+        },
+        {
+            "user": "NICEPEEK",
+            "link": "https://youtu.be/FQPBLW1kk3w",
+            "percent": 100,
+            "hz": 240
+        },
+        {
+            "user": "CreatMin",
+            "link": "https://youtu.be/xrP5PXo8yGs?si=O5Vy6So31ORuqIpT",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "imasssaya",
+            "link": "https://youtu.be/ddb610owHOc",
+            "percent": 100,
+            "hz": 240
+        }
+    ]
+}

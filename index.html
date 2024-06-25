@@ -1,52 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=1024" />
-        <title>The Shitty List</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;700&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" type="text/css" href="/css/reset.css" />
-        <link rel="stylesheet" type="text/css" href="/css/typography.css" />
-        <link rel="stylesheet" type="text/css" href="/css/main.css" />
-        <link rel="stylesheet" type="text/css" href="/css/pages/list.css" />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="/css/pages/leaderboard.css"
-        />
-        <link rel="stylesheet" type="text/css" href="/css/pages/roulette.css" />
-        <link rel="stylesheet" type="text/css" href="/css/components/nav.css" />
-        <link rel="stylesheet" type="text/css" href="/css/components/btn.css" />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="/css/components/tabs.css"
-        />
-        <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
-        <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
-        <script type="module" src="/js/main.js"></script>
-    </head>
-    <body id="app">
-        <header :class="{ dark: store.dark }">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta property="og:title" content="WEList" />
+    <meta property="og:description"
+        content="Официальный сайт листа для WEGDPS" />
+    <meta property="og:url" content="https://wegdps.github.io" />
+    <meta property="og:image" content="/welistico.png" />
+    <title>WEList</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/typography.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/list.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/leaderboard.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/roulette.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/nav.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/btn.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/select.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/auth.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/components/select.js"></script>
+</head>
+<body id="app">
+    <div class="root" :class="{ dark: store.dark }">
+        <header class="surface">
             <div class="logo">
-                <h2>TSL</h2>
-                <p>v1.6.5</p>
+                <img src="/welistico.png" alt="logo" />
             </div>
             <nav class="nav">
-                <router-link class="nav__tab" to="/">
-                    <span class="type-label-lg">List</span>
-                </router-link>
+                <div class="droplist">
+                    <div class="droplistbutton">
+                        <span class="type-label-lg">Выбрать лист</span>
+                    </div>
+                    <div class="droplist-content">
+                        <router-link class="droplist-link" to="/">
+                            <span class="type-label-lg">Демон лист</span>
+                        </router-link>
+                        <router-link class="droplist-link2" to="/ch">
+                            <span class="type-label-lg">Челлендж лист</span>
+                        </router-link>
+                        <router-link class="droplist-link2" to="/pl">
+                            <span class="type-label-lg">Платформер лист</span>
+                        </router-link>
+                    </div>
+                </div>
                 <router-link class="nav__tab" to="/leaderboard">
-                    <span class="type-label-lg">Leaderboard</span>
+                    <span class="type-label-lg">Таблица лидеров</span>
                 </router-link>
                 <router-link class="nav__tab" to="/roulette">
-                    <span class="type-label-lg">Roulette</span>
+                    <span class="type-label-lg">Рулетка</span>
                 </router-link>
                 <div class="nav__actions">
                     <button
@@ -58,18 +70,17 @@
                             alt=""
                         />
                     </button>
-                    <a class="nav__icon" href="https://discord.gg/MApKMWZazm">
+                    <a class="nav__icon" href="https://discord.gg/wegdps-x-1143267375924400321">
                         <img src="/assets/discord.svg" alt="Discord Logo" />
                     </a>
-                    <a
-                        class="nav__cta type-label-lg"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfnL07lut6MBPuPElD9Pv0AQ6RTlkhKsqWYMKnBMSpIcmQRkA/viewform"
-                        target="_blank"
-                        >Submit Record</a
-                    >
+                    <a class="nav__cta type-label-lg"
+                        href="https://forms.gle/uCv88TE9wqfYN6kL8"
+                        target="_blank">Отправить рекорд?</a>
                 </div>
             </nav>
         </header>
-        <router-view :class="{ dark: store.dark }"></router-view>
-    </body>
+        <router-view></router-view>
+    </div>
+</body>
+
 </html>

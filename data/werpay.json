@@ -1,0 +1,31 @@
+{
+    "id": 7089405,
+    "name": "Werpay",
+    "author": "miffiewxx",
+    "creators": ["4ushka", "miffiewxx"],
+    "verifier": "miffiewxx",
+    "verification": "https://youtu.be/CS_LNBXYoHc",
+    "showcase": "https://youtu.be/GyxrdIiFbnQ",
+    "percentToQualify": 64,
+    "password": "Нету пароля",
+    "records": [
+        {
+            "user": "Tami",
+            "link": "https://youtu.be/q_OQJVqP_W8",
+            "percent": 100,
+            "hz": 360
+        },
+        {
+            "user": "SpaceKZ",
+            "link": "https://youtu.be/CS_LNBXYoHc",
+            "percent": 100,
+            "hz": 360
+        },
+        {
+            "user": "NICEPEEK",
+            "link": "https://youtu.be/VZ9NfNHnNqc",
+            "percent": 100,
+            "hz": 240
+        }
+    ]
+}

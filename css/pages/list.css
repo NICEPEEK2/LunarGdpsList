@@ -39,6 +39,7 @@
 .page-list .list .level button:hover {
     background-color: var(--color-background-hover);
     color: var(--color-on-background-hover);
+    cursor: pointer;
 }
 .page-list .list .level.active button {
     background-color: var(--color-primary);
@@ -59,6 +60,7 @@
 }
 .page-list .level-container .level .video {
     aspect-ratio: 16/9;
+    border-radius: 1em;
 }
 .page-list .level-container .level .stats {
     display: flex;
@@ -125,4 +127,22 @@
 }
 .page-list .meta .editors li a:hover {
     text-decoration: underline;
+}
+
+/* Shitty */
+
+.shitty .page-list .list .level button {
+    background-color: transparent;
+    padding: 1rem 0;
+}
+
+
+.shitty .page-list .list .level button:hover {
+    background-color: #eee;
+    color: black !important;
+}
+
+.shitty .page-list .list .level.active button {
+    background-color: transparent;
+    color: orange;
 }

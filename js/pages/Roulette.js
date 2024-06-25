@@ -1,8 +1,8 @@
-import { fetchList } from '../content.js';
-import { getThumbnailFromId, getYoutubeIdFromUrl, shuffle } from '../util.js';
+import { fetchList, fetchCHList } from "../content.js";
+import { getThumbnailFromId, getYoutubeIdFromUrl, shuffle } from "../util.js";
 
-import Spinner from '../components/Spinner.js';
-import Btn from '../components/Btn.js';
+import Spinner from "../components/Spinner.js";
+import Btn from "../components/Btn.js";
 
 export default {
     components: { Spinner, Btn },
@@ -11,33 +11,33 @@ export default {
             <Spinner></Spinner>
         </main>
         <main v-else class="page-roulette">
-            <div class="sidebar">
+            <div class="sidebar surface">
                 <p class="type-label-md" style="color: #aaa">
-                    Shameless copy of the Extreme Demon Roulette by <a href="https://matcool.github.io/extreme-demon-roulette/" target="_blank">matcool</a>.
+                  Копия Extreme Demon Roulette от <a href="https://matcool.github.io/extreme-demon-roulette/" target="_blank">matcool</a>.
                 </p>
                 <form class="options">
                     <div class="check">
-                        <input type="checkbox" id="main" value="Main List" v-model="useMainList">
-                        <label for="main">Main List</label>
+                        <input type="checkbox" id="main" value="Демон лист" v-model="useMainList">
+                        <label for="main">Демон лист</label>
                     </div>
                     <div class="check">
-                        <input type="checkbox" id="extended" value="Extended List" v-model="useExtendedList">
-                        <label for="extended">Extended List</label>
+                        <input type="checkbox" id="challenge" value="Челлендж лист" v-model="useChallengeList">
+                        <label for="challenge">Челлендж лист</label>
                     </div>
-                    <Btn @click.native.prevent="onStart">{{ levels.length === 0 ? 'Start' : 'Restart'}}</Btn>
+                    <Btn @click.native.prevent="onStart">{{ levels.length === 0 ? 'Старт' : 'Перезапуск'}}</Btn>
                 </form>
                 <p class="type-label-md" style="color: #aaa">
-                    The roulette saves automatically.
+                    Рулетка сохраняется автоматически!
                 </p>
                 <form class="save">
-                    <p>Manual Load/Save</p>
+                    <p>Ручная загрузка/сохранение</p>
                     <div class="btns">
-                        <Btn @click.native.prevent="onImport">Import</Btn>
-                        <Btn :disabled="!isActive" @click.native.prevent="onExport">Export</Btn>
+                        <Btn @click.native.prevent="onImport">Импорт</Btn>
+                        <Btn :disabled="!isActive" @click.native.prevent="onExport">Экспорт</Btn>
                     </div>
                 </form>
             </div>
-            <section class="levels-container">
+            <section class="levels-container surface">
                 <div class="levels">
                     <template v-if="levels.length > 0">
                         <!-- Completed Levels -->
@@ -107,20 +107,20 @@ export default {
         givenUp: false,
         showRemaining: false,
         useMainList: true,
-        useExtendedList: true,
+        useChallengeList: true,
         toasts: [],
         fileInput: undefined,
     }),
     mounted() {
         // Create File Input
-        this.fileInput = document.createElement('input');
-        this.fileInput.type = 'file';
+        this.fileInput = document.createElement("input");
+        this.fileInput.type = "file";
         this.fileInput.multiple = false;
-        this.fileInput.accept = '.json';
-        this.fileInput.addEventListener('change', this.onImportUpload);
+        this.fileInput.accept = ".json";
+        this.fileInput.addEventListener("change", this.onImportUpload);
 
         // Load progress from local storage
-        const roulette = JSON.parse(localStorage.getItem('roulette'));
+        const roulette = JSON.parse(localStorage.getItem("roulette"));
 
         if (!roulette) {
             return;
@@ -159,22 +159,23 @@ export default {
         getYoutubeIdFromUrl,
         async onStart() {
             if (this.isActive) {
-                this.showToast('Give up before starting a new roulette.');
+                this.showToast("Give up before starting a new roulette.");
                 return;
             }
 
-            if (!this.useMainList && !this.useExtendedList) {
+            if (!this.useMainList && !this.useChallengeList) {
                 return;
             }
 
             this.loading = true;
 
             const fullList = await fetchList();
+            const fullCHList = await fetchCHList();
 
             if (fullList.filter(([_, err]) => err).length > 0) {
                 this.loading = false;
                 this.showToast(
-                    'List is currently broken. Wait until it\'s fixed to start a roulette.',
+                    "Лист в настоящее время раскуривает марихуану. Подождите, пока он закончит чтобы начать рулетку."
                 );
                 return;
             }
@@ -185,10 +186,16 @@ export default {
                 name: lvl.name,
                 video: lvl.verification,
             }));
+            const fullCHListMapped = fullCHList.map(([lvl, _], i) => ({
+                rank: i + 1,
+                id: lvl.id,
+                name: lvl.name,
+                video: lvl.verification,
+            }));
             const list = [];
-            if (this.useMainList) list.push(...fullListMapped.slice(0, 75));
-            if (this.useExtendedList) {
-                list.push(...fullListMapped.slice(75, 150));
+            if (this.useMainList) list.push(...fullListMapped);
+            if (this.useChallengeList) {
+                list.push(...fullCHListMapped);
             }
 
             // random 100 levels
@@ -202,11 +209,11 @@ export default {
         },
         save() {
             localStorage.setItem(
-                'roulette',
+                "roulette",
                 JSON.stringify({
                     levels: this.levels,
                     progression: this.progression,
-                }),
+                })
             );
         },
         onDone() {
@@ -218,7 +225,7 @@ export default {
                 this.percentage <= this.currentPercentage ||
                 this.percentage > 100
             ) {
-                this.showToast('Invalid percentage.');
+                this.showToast("Invalid percentage.");
                 return;
             }
 
@@ -231,12 +238,14 @@ export default {
             this.givenUp = true;
 
             // Save progress
-            localStorage.removeItem('roulette');
+            localStorage.removeItem("roulette");
         },
         onImport() {
             if (
                 this.isActive &&
-                !window.confirm('This will overwrite the currently running roulette. Continue?')
+                !window.confirm(
+                    "Это изменит текущую рулетку. Продолжить?"
+                )
             ) {
                 return;
             }
@@ -248,8 +257,8 @@ export default {
 
             const file = this.fileInput.files[0];
 
-            if (file.type !== 'application/json') {
-                this.showToast('Invalid file.');
+            if (file.type !== "application/json") {
+                this.showToast("Invalid file.");
                 return;
             }
 
@@ -257,7 +266,7 @@ export default {
                 const roulette = JSON.parse(await file.text());
 
                 if (!roulette.levels || !roulette.progression) {
-                    this.showToast('Invalid file.');
+                    this.showToast("Invalid file.");
                     return;
                 }
 
@@ -268,21 +277,23 @@ export default {
                 this.showRemaining = false;
                 this.percentage = undefined;
             } catch {
-                this.showToast('Invalid file.');
+                this.showToast("Invalid file.");
                 return;
             }
         },
         onExport() {
             const file = new Blob(
-                [JSON.stringify({
-                    levels: this.levels,
-                    progression: this.progression,
-                })],
-                { type: 'application/json' },
+                [
+                    JSON.stringify({
+                        levels: this.levels,
+                        progression: this.progression,
+                    }),
+                ],
+                { type: "application/json" }
             );
-            const a = document.createElement('a');
+            const a = document.createElement("a");
             a.href = URL.createObjectURL(file);
-            a.download = 'tsl_roulette';
+            a.download = "welist_roulette";
             a.click();
             URL.revokeObjectURL(a.href);
         },
