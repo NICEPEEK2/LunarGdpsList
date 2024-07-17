@@ -7,7 +7,7 @@
     <meta property="og:title" content="LunarList" />
     <meta property="og:description"
         content="Официальный Лист LunarGDPS" />
-    <meta property="og:url" content="https://wegdps.github.io" />
+    <meta property="og:url" content="https://nicepeek2.github.io/LunarGdpsList/" />
     <meta property="og:image" content="/welistico.png" />
     <title>LunarList</title>
     <link rel="icon" href="/favicon.ico" />
