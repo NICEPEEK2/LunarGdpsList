@@ -1,25 +1,15 @@
 {
-    "id": 7090905,
+    "id": 4,
     "name": "Shedevro Clubstep",
     "author": "NICEPEEK",
-    "creators": ["NICEPEEK, Future"],
-    "verifier": "Tami",
-    "verification": "https://youtu.be/a05ey-Sj8Do",
-    "showcase": "https://youtu.be/CS_LNBXYoHc",
-    "percentToQualify": 42,
-    "password": "Нет пароля",
+    "creators": ["NICEPEEK, WelD"],
+    "verifier": "NICEPEEK",
+    "verification": "https://www.youtube.com/watch?v=a05ey-Sj8Do&ab_channel=JustTami",
+    "showcase": "https://www.youtube.com/watch?v=a05ey-Sj8Do&ab_channel=JustTami",
+    "percentToQualify": 51,
+    "password": "Нету пароля",
     "records": [
-        {
-            "user": "NICEPEEK",
-            "link": "https://youtu.be/SWf4dvapf-c",
-            "percent": 100,
-            "hz": 240
-        },
-        {
-            "user": "SpaceKZ",
-            "link": "https://www.youtube.com/watch?v=CS_LNBXYoHc",
-            "percent": 49,
-            "hz": 240
-        }
+
+
     ]
 }

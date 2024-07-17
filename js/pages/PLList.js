@@ -107,7 +107,7 @@ export default {
                     <p> Когда вы отправляете рекорд убедитесь что соблюдайте эти правила:</p>
                     <p> - TODO: тут должны быть правила пл. листа </p>
                     <p> </p>
-                    <p> All credit goes to The Shitty list. WEList is not affiliated with The Shitty list. </p>
+                    <p> All credit goes to The Shitty list and WEList. LunarList is not affiliated with The Shitty list. </p>
                 </div>
             </div>
         </main>

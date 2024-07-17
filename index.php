@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1024" />
-    <meta property="og:title" content="WEList" />
+    <meta property="og:title" content="LunarList" />
     <meta property="og:description"
-        content="Официальный сайт листа для WEGDPS" />
+        content="Официальный Лист LunarGDPS" />
     <meta property="og:url" content="https://wegdps.github.io" />
     <meta property="og:image" content="/welistico.png" />
-    <title>WEList</title>
+    <title>LunarList</title>
     <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,7 +35,7 @@
     <div class="root" :class="{ dark: store.dark }">
         <header class="surface">
             <div class="logo">
-                <img src="/welistico.png" alt="logo" />
+                <img src="./welistico.png" alt="logo" />
             </div>
             <nav class="nav">
                 <div class="droplist">
@@ -70,11 +70,11 @@
                             alt=""
                         />
                     </button>
-                    <a class="nav__icon" href="https://discord.gg/wegdps-x-1143267375924400321">
-                        <img src="/assets/discord.svg" alt="Discord Logo" />
+                    <a class="nav__icon" href="https://discord.gg/WvfUns3Egk">
+                        <img src="./assets/discord.svg" alt="Discord Logo" />
                     </a>
                     <a class="nav__cta type-label-lg"
-                        href="https://forms.gle/uCv88TE9wqfYN6kL8"
+                        href="https://forms.gle/MpszzwAX2k8X8YNB7"
                         target="_blank">Отправить рекорд?</a>
                 </div>
             </nav>

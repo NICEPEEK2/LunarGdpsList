@@ -115,7 +115,7 @@ export default {
                     <p> - Не используйте баги, сваг роуты и секрет веи. </p>
                     <p> - Не присылайте прогреcсы на облегчённых версиях лвлов. </p>
                     <p> </p>
-                    <p> All credit goes to The Shitty list. WEList is not affiliated with The Shitty list. </p>
+                    <p> All credit goes to The Shitty list and WEList. LunarList is not affiliated with The Shitty list. </p>
                 </div>
             </div>
         </main>

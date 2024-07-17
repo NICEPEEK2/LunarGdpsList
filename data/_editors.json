@@ -1,27 +1,22 @@
 [
     {
         "role": "owner",
-        "name": "Launa",
-        "link": "https://www.youtube.com/channel/UCUaCfafIsLr_PMUXIRPhF3Q"
+        "name": "NICEPEEK",
+        "link": "https://www.youtube.com/@GMD_NICEPEEK"
     },
     {
         "role": "owner",
-        "name": "miffiewxx",
-        "link": "https://www.youtube.com/@aviuss."
+        "name": "TheJulfor",
+        "link": "https://www.youtube.com/@TheJulfor"
     },
     {
         "role": "dev",
-        "name": "Azeronir",
-        "link": "https://www.youtube.com/@Azeronir"
+        "name": "Exotium",
+        "link": "https://www.youtube.com/@exotium"
     },
     {
         "role": "dev",
-        "name": "O K Z . . .",
-        "link": "https://github.com/okz-spec"
-    },
-    {
-        "role": "admin",
-        "name": "Tami",
-        "link": "https://www.youtube.com/@tami2609"
+        "name": "Flowerss",
+        "link": "https://www.youtube.com/@flowersgd"
     }
 ]
